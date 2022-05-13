@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>All lists</h1>
+
+  <%# display all lists %>
+  <div class="row justify-content-center">
+    <% @lists.each do |list| %>
+      <div class="col-7 col-lg-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to list.name, list_path(list) %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <%# add new list %>
+  <%= link_to new_list_path do %>
+    <i class="fas fa-plus-square"></i>
+  <% end %>
+
+</div>
