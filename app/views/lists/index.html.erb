@@ -4,7 +4,7 @@
   <div class="row justify-content-center text-center">
     <% @lists.each do |list| %>
       <div class="col-12 col-sm-4">
-        <div class="card bg-dark text-white">
+        <div class="card bg-dark text-white", style="max-width: 540px;">
           <%# image_tag 'https://www.hola.com/us/images/0273-1492357d8f3d-5801ef3b6863-1000/horizontal-mobile-480/luis-miguel.jpg', class: 'card-img', height: 300, width: 400, crop: :fill %>
           <%= list.photo.attached? ? cl_image_tag(list.photo.key) : image_tag('https://www.hola.com/us/images/0273-1492357d8f3d-5801ef3b6863-1000/horizontal-mobile-480/luis-miguel.jpg') %>
           <div class="card-img-overlay">

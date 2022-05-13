@@ -7,27 +7,20 @@
   <%# Display all bookmarks %>
   <div class="row justify-content-center">
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="col7 col-lg-6">
-        <strong>
-          <%= bookmark.movie.title %>
-        </strong>
-        <%= bookmark.comment %>
-        <%= link_to "delete" , bookmark_path(bookmark), method: :delete %>
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-              card's content.</p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">An item</li>
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-          </ul>
-          <div class="card-body">
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+      <div class="col-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <%= image_tag bookmark.movie.poster_url, class: 'img-fluid rounded-start' %>
+              <%# <img src="..." class="img-fluid rounded-start" alt="..."> %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= bookmark.movie.title %></h5>
+                <p class="card-text"><%= bookmark.comment %></p>
+                <%= link_to "delete" , bookmark_path(bookmark), method: :delete, class:'btn btn-primary' %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
